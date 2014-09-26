@@ -42,13 +42,13 @@ var SongQueue = Songs.extend({
     }
 
     //put it in storage
-    localStorage.setItem('queue', this.toJSON());
+    localStorage.setItem('queue', JSON.stringify(this));
   },
 
   dequeue: function(song){
     this.remove(song);
 
-    localStorage.setItem('queue', this.toJSON());
+    localStorage.setItem('queue', JSON.stringify(this));
     console.log('toJSON', this.toJSON());
   }
 
